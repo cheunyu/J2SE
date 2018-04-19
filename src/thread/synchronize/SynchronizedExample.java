@@ -5,13 +5,13 @@ package thread.synchronize;
  * @date:2018/4/18 5:04
  */
 public class SynchronizedExample implements Runnable {
-    private int tick = 50;
+    private int tick = 1000;
     private boolean flag = true;
     @Override
     public void run() {
         while (flag) {
             try {
-                buyTick();
+                buyTickSyn();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -43,7 +43,7 @@ public class SynchronizedExample implements Runnable {
             flag = false;
             return;
         }
-        Thread.sleep(100);
+        Thread.sleep(10);
         System.out.println(Thread.currentThread().getName() + " tick -----> " + tick--);
     }
 }
