@@ -15,13 +15,8 @@ public class Producer implements Runnable {
     @Override
     public void run() {
         while (true) {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
             synchronized (info) {
-                if (info.getCount() == 20) {
+                while (info.getCount() == 100) {
                     try {
                         System.out.println("========");
                         info.wait();
@@ -31,9 +26,10 @@ public class Producer implements Runnable {
                 }
                 info.setCount(info.getCount() + 1);
                 System.out.println("生产者生产，目前共有" + info.getCount());
-//                info.notifyAll();
+                info.notifyAll();
             }
         }
+
 
     }
 }

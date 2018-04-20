@@ -16,13 +16,8 @@ public class Consumer implements Runnable {
     public void run() {
 
         while (true) {
-            try {
-                Thread.sleep(100);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
             synchronized (info) {
-                if (info.getCount() == 0) {
+                while (info.getCount() == 0) {
                     try {
                         info.wait();
                     } catch (InterruptedException e) {
@@ -31,7 +26,7 @@ public class Consumer implements Runnable {
                 }
                 info.setCount(info.getCount() - 1);
                 System.out.println("消费者消费，目前共有" + info.getCount());
-//                info.notifyAll();
+                info.notifyAll();
             }
         }
     }
