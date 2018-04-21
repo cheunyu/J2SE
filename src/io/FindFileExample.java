@@ -6,7 +6,7 @@ import java.io.File;
  * @author:cheunyu
  * @date:2018/4/21 17:21
  */
-public class Test {
+public class FindFileExample {
     public static void main(String[] args) {
         String path = "d:/photo";
         File file = new File(path);
