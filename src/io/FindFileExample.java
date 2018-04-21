@@ -12,7 +12,7 @@ public class FindFileExample {
     public static void main(String[] args) {
         String path = "d:/photo";
         File file = new File(path);
-//        printName(file);
+            printName(file);
         File[] fileArrays = File.listRoots();
         for (File f:fileArrays) {
             printName(f);
