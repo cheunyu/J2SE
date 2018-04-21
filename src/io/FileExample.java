@@ -30,6 +30,6 @@ public class FileExample {
         boolean file2del =file2.delete();   //删除文件成功返回真，失败返回假
         System.out.println(file2del?"删除文件成功":"删除文件失败");
         File tmpFile = File.createTempFile("tmpfile",".tmp",new File("d:/"));   //新建临时文件
-        tmpFile.deleteOnExit(); //程序退出时删除临时文件
+        tmpFile.deleteOnExit();  //程序退出时删除临时文件
     }
 }
