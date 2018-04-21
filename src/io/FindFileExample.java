@@ -17,7 +17,6 @@ public class FindFileExample {
         for (File f:fileArrays) {
             printName(f);
         }
-
     }
 
     public static void printName(File file) {
