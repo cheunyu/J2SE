@@ -18,7 +18,10 @@ public class DataOutputStreamExample {
         DataOutputStream dos = new DataOutputStream(
                 new BufferedOutputStream(
                         new FileOutputStream(
-                                new File(descPath))));
+                                new File(descPath)
+                        )
+                )
+        );
         try {
             dos.writeUTF(str);
             dos.write(i);

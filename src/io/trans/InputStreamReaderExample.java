@@ -12,7 +12,13 @@ public class InputStreamReaderExample {
         String srcPath = "C:/Users/foo/Desktop/[WPF]JJDown/5、提示需要安装.NET 4.0？请先点我.txt";
         BufferedReader bufferedReader = null;
         try {
-            bufferedReader = new BufferedReader(new InputStreamReader(new FileInputStream(new File(srcPath)), "utf-8"));
+            bufferedReader = new BufferedReader(
+                    new InputStreamReader(
+                            new FileInputStream(
+                                    new File(srcPath)
+                            ),
+                            "utf-8")
+            );
             String line = null;
             while (null!=(line = bufferedReader.readLine())) {
                 System.out.println(line);
