@@ -6,7 +6,7 @@ import java.io.*;
  * @author:cheunyu
  * @date:2018/4/22 15:24
  */
-public class A {
+public class FileCopyExample {
     public static void main(String[] args) {
         String path = "C:/Users/foo/Desktop/新建文件夹/test1.txt";
         String path2 = "C:/Users/foo/Desktop/新建文件夹/test1.txt";
