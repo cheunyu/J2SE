@@ -10,8 +10,8 @@ import java.io.*;
 public class FileCopyExample {
 
     public static void main(String[] args) {
-        String path = "";
-        String path2 = "";
+        String path = "C:/Users/foo/Desktop/新建文件夹/test1.txt";
+        String path2 = "C:/Users/foo/Desktop/新建文件夹/test1.txt";
         copy(path, path2);
     }
 
