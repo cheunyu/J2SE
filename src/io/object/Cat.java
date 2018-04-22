@@ -7,12 +7,12 @@ import java.io.Serializable;
  * @date:2018/4/23 2:17
  * @deprecated 要序列化操作的类，实现Serializable接口，使用transient关键字设置属性不做序列化
  */
-public class C implements Serializable {
+public class Cat implements Serializable {
 
     private String name;
     private transient String color;
 
-    public C(String name, String color) {
+    public Cat(String name, String color) {
         this.name = name;
         this.color = color;
     }
