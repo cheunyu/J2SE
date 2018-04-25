@@ -7,6 +7,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author:cheunyu
@@ -14,16 +16,15 @@ import java.net.Socket;
  */
 public class ChatServer {
 
+    private static List<ChannelServer> channelServerList = new ArrayList<>();
+
     public static void main(String[] args) throws IOException {
         ServerSocket server = new ServerSocket(10010);
-        Socket client = server.accept();
-        DataInputStream dis = new DataInputStream(client.getInputStream());
-        DataOutputStream dos = new DataOutputStream(client.getOutputStream());
+
         while (true) {
-            String msg = dis.readUTF();
-            System.out.println("server接收:" + msg);
-            dos.writeUTF("service发送:" + msg);
-            dos.flush();
+            Socket client = server.accept();
+            ChannelServer channelServer = new ChannelServer(client, channelServerList);
+            new Thread(channelServer).start();
         }
     }
 }
