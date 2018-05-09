@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -15,7 +16,7 @@ import java.sql.Statement;
 public class StatementExample {
 
     @Test
-    public void statement() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException, IOException {
+    public void insert() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException, IOException {
         DriverManagerExample driverManagerExample = new DriverManagerExample();
         Connection conn = driverManagerExample.getConnection();
 
@@ -24,5 +25,21 @@ public class StatementExample {
         Statement statement = conn.createStatement();
         statement.execute(sql);
         statement.close();
+        conn.close();
+    }
+
+    @Test
+    public void select() throws ClassNotFoundException, SQLException, InstantiationException, IllegalAccessException, IOException {
+        DriverManagerExample driverManagerExample = new DriverManagerExample();
+        Connection conn = driverManagerExample.getConnection();
+
+        String sql = "select * from user";
+        Statement statement = conn.createStatement();
+        ResultSet resultSet = statement.executeQuery(sql);
+        while (resultSet.next()) {
+            System.out.println(resultSet.getInt(1) + resultSet.getString(2) + resultSet.getString(3));
+        }
+        statement.close();
+        conn.close();
     }
 }
