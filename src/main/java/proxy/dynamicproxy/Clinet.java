@@ -8,9 +8,9 @@ import java.lang.reflect.Proxy;
 public class Clinet {
 
     public static void main(String[] args) {
-        RealSubject realSubject = new RealSubject();
+        Subject realSubject = new RealSubject();
         ProxyHandle proxyHandle = new ProxyHandle(realSubject);
-        Subject proxySubject = (Subject) Proxy.newProxyInstance(RealSubject.class.getClassLoader(), RealSubject.class.getInterfaces(), proxyHandle);
+        Subject proxySubject = (Subject) Proxy.newProxyInstance(ProxyHandle.class.getClassLoader(), realSubject.getClass().getInterfaces(), proxyHandle);
         proxySubject.request();
         proxySubject.otherMethod(100);
     }

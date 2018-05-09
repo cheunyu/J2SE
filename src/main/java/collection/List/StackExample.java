@@ -6,7 +6,7 @@ import java.util.Stack;
 public class StackExample {
 
     public static void main(String[] args) {
-        Stack<String> stack = new Stack<>();
+        Stack<String> stack = new Stack<String>();
         stack.add("a");
         stack.add("b");
         stack.add("c");

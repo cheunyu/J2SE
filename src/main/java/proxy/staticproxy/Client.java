@@ -6,8 +6,8 @@ package proxy.staticproxy;
 public class Client {
 
     public static void main(String[] args) {
-        RealSubject realSubject = new RealSubject();
-        Proxy proxySubject = new Proxy(realSubject);
+        Subject realSubject = new RealSubject();
+        Subject proxySubject = new Proxy(realSubject);
         proxySubject.request();
     }
 }
