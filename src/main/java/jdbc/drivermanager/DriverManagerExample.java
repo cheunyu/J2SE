@@ -5,7 +5,6 @@ import org.junit.Test;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
-import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
@@ -15,7 +14,7 @@ import java.util.Properties;
  * @date:2018/5/10 1:18
  * @deprecated:DriverManager管理多个驱动
  */
-public class JdbcDriverManager {
+public class DriverManagerExample {
 
     @Test
     public Connection getConnection() throws IOException, ClassNotFoundException, IllegalAccessException, InstantiationException, SQLException {
