@@ -25,5 +25,7 @@ public class PreparedStatementExample {
         preparedStatement.setString(2, "Panda");
         preparedStatement.setString(3, "13144242");
         preparedStatement.execute();
+        preparedStatement.close();
+        conn.close();
     }
 }
