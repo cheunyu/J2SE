@@ -1,9 +1,5 @@
 package jdbc.util;
 
-import jdbc.statement.PreparedStatementExample;
-import jdk.internal.util.xml.impl.Input;
-
-import javax.swing.plaf.nimbus.State;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.*;
@@ -72,4 +68,13 @@ public class DBUtil {
         }
     }
 
+    public static void close(PreparedStatement preparedStatement) {
+        if (preparedStatement != null) {
+            try {
+                preparedStatement.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }
